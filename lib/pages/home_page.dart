@@ -32,10 +32,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   List<Appointment> parseJson(String response) {
     final parsed =
         json.decode(response.toString()).cast<Map<String, dynamic>>();
     return parsed.map<Appointment>((json) => new Appointment.fromJson(json)).toList();
+  }
+
+  Future<String> getJsonStringFromFile() async {
+      return await DefaultAssetBundle.of(context)
+                .loadString('assets/json/timetable.json');
   }
 
   @override
@@ -48,8 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: new Center(
           // Use future builder and DefaultAssetBundle to load the local JSON file
           child: new FutureBuilder(
-            future: DefaultAssetBundle.of(context)
-                .loadString('assets/json/timetable.json'),
+            future: getJsonStringFromFile(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return new Center(
