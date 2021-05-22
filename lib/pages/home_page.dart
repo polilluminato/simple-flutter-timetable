@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-import '../ui/citylist.dart';
-import '../models/city.dart';
+import '../ui/appointment_list.dart';
+import '../models/appointment.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -32,10 +32,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<City> parseJson(String response) {
+  List<Appointment> parseJson(String response) {
     final parsed =
         json.decode(response.toString()).cast<Map<String, dynamic>>();
-    return parsed.map<City>((json) => new City.fromJson(json)).toList();
+    return parsed.map<Appointment>((json) => new Appointment.fromJson(json)).toList();
   }
 
   @override
@@ -56,9 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: new CircularProgressIndicator(),
                 ); // return a loader when there is not data
               } else {
-                List<City> citylist = parseJson(snapshot.data.toString());
-                return new CityList(
-                  citylist: citylist,
+                List<Appointment> appointments = parseJson(snapshot.data.toString());
+                return new AppointmentList(
+                  appointments: appointments,
                 );
               }
             },
