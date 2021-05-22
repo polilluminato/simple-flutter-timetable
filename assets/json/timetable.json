@@ -1,10 +1,32 @@
 [
-    {
-    "country":"India",
-    "capital":"New Delhi"
-    },
-    {
-      "country":"Australia",
-      "capital":"Canberra"
-    }
-  ]
+  {
+    "day": "2021-05-24",
+    "time": "09:00 -> 11:00",
+    "type": "relax",
+    "notes": "Yoga class"
+  },
+  {
+    "day": "2021-05-25",
+    "time": "11:30 -> 12:30",
+    "type": "study",
+    "notes": "French Lesson"
+  },
+  {
+    "day": "2021-05-26",
+    "time": "14:00 -> 17:00",
+    "type": "gym",
+    "notes": "Aqua Fitness"
+  },
+  {
+    "day": "2021-05-27",
+    "time": "09:00 -> 10:30",
+    "type": "study",
+    "notes": "French Lesson"
+  },
+  {
+    "day": "2021-05-28",
+    "time": "12:00 -> 13:45",
+    "type": "friends",
+    "notes": "Lunch with Jane"
+  }
+]
