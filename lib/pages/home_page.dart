@@ -10,15 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Easy Timetable',
+      title: 'Simple Flutter Timetable',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
-        primarySwatch: Colors.blue,
-        accentColor: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Easy Timetable'),
+      home: MyHomePage(title: 'Simple Flutter Timetable'),
     );
   }
 }
@@ -33,15 +31,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  Future<String> getJsonStringFromFile() async {
+    return await DefaultAssetBundle.of(context)
+        .loadString('assets/json/timetable.json');
+  }
+
   List<Appointment> parseJson(String response) {
     final parsed =
         json.decode(response.toString()).cast<Map<String, dynamic>>();
-    return parsed.map<Appointment>((json) => new Appointment.fromJson(json)).toList();
-  }
-
-  Future<String> getJsonStringFromFile() async {
-      return await DefaultAssetBundle.of(context)
-                .loadString('assets/json/timetable.json');
+    return parsed
+        .map<Appointment>((json) => new Appointment.fromJson(json))
+        .toList();
   }
 
   @override
@@ -61,7 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: new CircularProgressIndicator(),
                 ); // return a loader when there is not data
               } else {
-                List<Appointment> appointments = parseJson(snapshot.data.toString());
+                List<Appointment> appointments =
+                    parseJson(snapshot.data.toString());
                 return new AppointmentList(
                   appointments: appointments,
                 );
