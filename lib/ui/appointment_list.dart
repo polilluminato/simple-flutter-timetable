@@ -45,7 +45,7 @@ class AppointmentList extends StatelessWidget {
             ),
             title: Padding(
               padding: EdgeInsets.only(bottom: 8),
-              child: Text(appointments[index].notes),
+              child: Text(appointments[index].title),
             ),
             subtitle: Text(
                 "${formatDate(appointments[index].day)} @ ${appointments[index].time}"),
