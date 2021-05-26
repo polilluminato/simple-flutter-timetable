@@ -13,9 +13,9 @@ The final result is
 
 This app is built with [Flutter](https://flutter.dev/) 2.2, with Sound Null Safety, and works out of the box on:
 
-:white_check_mark: Android
-:white_check_mark: iOS
-:white_check_mark: Web
+:white_check_mark: Android<br>
+:white_check_mark: iOS<br>
+:white_check_mark: Web<br>
 
 You can find the full article on: [Create a Simple Timetable App with JSON & Flutter](https://blog.albertobonacina.com/create-a-simple-timetable-app-with-json-and-flutter)
 
