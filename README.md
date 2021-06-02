@@ -9,7 +9,9 @@ Simple Flutter App to read a list of appointments from a local JSON file and sho
 
 The final result is 
 
-<img src="screenshots/home_page.png" width="250" />
+| Home |
+|  --- |
+|<img src="screenshots/home_page.png" width="250">|
 
 This app is built with [Flutter](https://flutter.dev/) 2.2, with Sound Null Safety, and works out of the box on:
 
