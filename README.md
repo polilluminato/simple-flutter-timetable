@@ -1,5 +1,7 @@
 # Simple Flutter Timetable
 
+<img src="cover.png">
+
 Simple Flutter App to read a list of appointments from a local JSON file and show them in a list. Useful to understand some concepts that can be used in Flutter Apps like:
 
 - read a file from the local storage
